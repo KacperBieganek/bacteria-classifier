@@ -1,11 +1,17 @@
 package com.kacperbieganek.model;
 
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
 import java.util.Objects;
 
+@XmlRootElement(name = "flagella")
 public class Flagella {
     private int alphaGene;
     private int betaGene;
     private int number;
+
+    public Flagella() {
+    }
 
     public Flagella(int alphaGene, int betaGene, int number) {
         this.alphaGene = alphaGene;
@@ -17,6 +23,7 @@ public class Flagella {
         return alphaGene;
     }
 
+    @XmlElement(name = "alpha")
     public void setAlphaGene(int alphaGene) {
         this.alphaGene = alphaGene;
     }
@@ -25,6 +32,7 @@ public class Flagella {
         return betaGene;
     }
 
+    @XmlElement(name = "beta")
     public void setBetaGene(int betaGene) {
         this.betaGene = betaGene;
     }

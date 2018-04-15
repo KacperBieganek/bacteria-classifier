@@ -9,6 +9,14 @@ public class Examined {
     private String bacteriaGenotype;
     private String bacteriaClass;
 
+    public Examined() {
+    }
+
+    public Examined(String bacteriaGenotype, String bacteriaClass) {
+        this.bacteriaGenotype = bacteriaGenotype;
+        this.bacteriaClass = bacteriaClass;
+    }
+
     public String getBacteriaGenotype() {
         return bacteriaGenotype;
     }

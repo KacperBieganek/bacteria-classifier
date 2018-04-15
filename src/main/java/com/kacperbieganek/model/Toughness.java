@@ -1,16 +1,29 @@
 package com.kacperbieganek.model;
 
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
 import java.util.Objects;
 
+@XmlRootElement(name = "toughness")
 public class Toughness {
     private int betaGene;
     private int gammaGene;
     private String rank;
 
+    public Toughness() {
+    }
+
+    public Toughness(int betaGene, int gammaGene, String rank) {
+        this.betaGene = betaGene;
+        this.gammaGene = gammaGene;
+        this.rank = rank;
+    }
+
     public int getBetaGene() {
         return betaGene;
     }
 
+    @XmlElement(name = "beta")
     public void setBetaGene(int betaGene) {
         this.betaGene = betaGene;
     }
@@ -19,6 +32,7 @@ public class Toughness {
         return gammaGene;
     }
 
+    @XmlElement(name = "gamma")
     public void setGammaGene(int gammaGene) {
         this.gammaGene = gammaGene;
     }
