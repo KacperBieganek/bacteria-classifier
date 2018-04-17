@@ -129,10 +129,10 @@ public class BacteriaDaoImpl implements BacteriaDao {
         String query = "SELECT NUMBER FROM FLAGELLA WHERE BETA = ? AND ALPHA = ?";
         try (PreparedStatement pStatement = con.prepareStatement(query)) {
             pStatement.setInt(1, betaGene);
-            pStatement.setInt(2,alphaGene);
+            pStatement.setInt(2, alphaGene);
             ResultSet rs = pStatement.executeQuery();
             rs.next();
-            flagella = new Flagella(alphaGene,betaGene, rs.getInt("NUMBER"));
+            flagella = new Flagella(alphaGene, betaGene, rs.getInt("NUMBER"));
 
         } catch (SQLException e) {
             LOG.error("", e);
@@ -177,7 +177,7 @@ public class BacteriaDaoImpl implements BacteriaDao {
                     pStatement.setInt(3, flagella.getNumber());
                     pStatement.addBatch();
                 } catch (SQLException e) {
-                    e.printStackTrace();
+                    LOG.error("", e);
                 }
             });
             int[] resultArray = pStatement.executeBatch();
@@ -205,7 +205,7 @@ public class BacteriaDaoImpl implements BacteriaDao {
         try (Statement statement = con.createStatement()) {
             ResultSet rs = statement.executeQuery(query);
             while (rs.next()) {
-                list.add(new Toughness(rs.getInt("alpha"), rs.getInt("beta"), rs.getString("rank")));
+                list.add(new Toughness(rs.getInt("beta"), rs.getInt("gamma"), rs.getString("rank")));
             }
         } catch (SQLException e) {
             LOG.error("", e);
@@ -219,10 +219,10 @@ public class BacteriaDaoImpl implements BacteriaDao {
         String query = "SELECT RANK FROM TOUGHNESS WHERE BETA = ? AND GAMMA = ?";
         try (PreparedStatement pStatement = con.prepareStatement(query)) {
             pStatement.setInt(1, betaGene);
-            pStatement.setInt(2,gammaGene);
+            pStatement.setInt(2, gammaGene);
             ResultSet rs = pStatement.executeQuery();
             rs.next();
-            toughness = new Toughness(betaGene,gammaGene, rs.getString("RANK"));
+            toughness = new Toughness(betaGene, gammaGene, rs.getString("RANK"));
 
         } catch (SQLException e) {
             LOG.error("", e);
@@ -267,7 +267,7 @@ public class BacteriaDaoImpl implements BacteriaDao {
                     pStatement.setString(3, toughness.getRank());
                     pStatement.addBatch();
                 } catch (SQLException e) {
-                    e.printStackTrace();
+                    LOG.error("", e);
                 }
             });
             int[] resultArray = pStatement.executeBatch();

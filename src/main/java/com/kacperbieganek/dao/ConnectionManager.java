@@ -9,7 +9,7 @@ import java.sql.SQLException;
 
 public class ConnectionManager {
 
-    private static final String DRIVER = "jdbc::sqlite:";
+    private static final String DRIVER = "jdbc:sqlite:";
 
     private static final Logger LOG = LoggerFactory.getLogger(ConnectionManager.class);
     private static ConnectionManager cm;
@@ -36,6 +36,16 @@ public class ConnectionManager {
             }
         }
         return connection;
+    }
+
+    public void closeConnection(){
+        if(connection != null){
+            try {
+                connection.close();
+            } catch (SQLException e) {
+                LOG.error("",e);
+            }
+        }
     }
 
 
