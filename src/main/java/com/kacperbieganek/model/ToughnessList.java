@@ -19,11 +19,4 @@ public class ToughnessList {
         this.toughnessList = toughnessList;
     }
 
-    public List<Toughness> getToughnessList() {
-        return toughnessList;
-    }
-
-    public void setToughnessList(List<Toughness> toughnessList) {
-        this.toughnessList = toughnessList;
-    }
 }

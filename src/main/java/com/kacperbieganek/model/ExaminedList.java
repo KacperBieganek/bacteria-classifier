@@ -19,11 +19,4 @@ public class ExaminedList {
         this.examinedList = examinedList;
     }
 
-    public List<Examined> getExaminedList() {
-        return examinedList;
-    }
-
-    public void setExaminedList(List<Examined> examinedList) {
-        this.examinedList = examinedList;
-    }
 }

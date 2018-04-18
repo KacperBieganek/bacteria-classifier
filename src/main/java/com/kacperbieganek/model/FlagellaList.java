@@ -19,11 +19,4 @@ public class FlagellaList {
         this.flagellaList = flagellaList;
     }
 
-    public List<Flagella> getFlagellaList() {
-        return flagellaList;
-    }
-
-    public void setFlagellaList(List<Flagella> flagellaList) {
-        this.flagellaList = flagellaList;
-    }
 }

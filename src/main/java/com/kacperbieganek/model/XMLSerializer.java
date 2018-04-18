@@ -15,10 +15,12 @@ public class XMLSerializer {
 
     private static final Logger LOG = LoggerFactory.getLogger(XMLSerializer.class);
 
+    public XMLSerializer() {
+    }
 
-    public void saveExamined(List<Examined> examinedList, File file) {
+    public void saveExamined(ExaminedList examinedList, File file) {
         try {
-            JAXBContext jaxbContext = JAXBContext.newInstance(Examined.class);
+            JAXBContext jaxbContext = JAXBContext.newInstance(ExaminedList.class);
             Marshaller jaxbMarshaller = jaxbContext.createMarshaller();
             jaxbMarshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
             jaxbMarshaller.marshal(examinedList, file);
@@ -27,9 +29,9 @@ public class XMLSerializer {
         }
     }
 
-    public void saveFlagella(List<Flagella> flagellaList, File file) {
+    public void saveFlagella(FlagellaList flagellaList, File file) {
         try {
-            JAXBContext jaxbContext = JAXBContext.newInstance(Flagella.class);
+            JAXBContext jaxbContext = JAXBContext.newInstance(FlagellaList.class);
             Marshaller jaxbMarshaller = jaxbContext.createMarshaller();
             jaxbMarshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
             jaxbMarshaller.marshal(flagellaList, file);
@@ -38,9 +40,9 @@ public class XMLSerializer {
         }
     }
 
-    public void saveToughness(List<Toughness> toughnessList, File file) {
+    public void saveToughness(ToughnessList toughnessList, File file) {
         try {
-            JAXBContext jaxbContext = JAXBContext.newInstance(Toughness.class);
+            JAXBContext jaxbContext = JAXBContext.newInstance(ToughnessList.class);
             Marshaller jaxbMarshaller = jaxbContext.createMarshaller();
             jaxbMarshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
             jaxbMarshaller.marshal(toughnessList, file);

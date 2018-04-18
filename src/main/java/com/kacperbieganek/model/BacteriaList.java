@@ -1,10 +1,13 @@
 package com.kacperbieganek.model;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import java.util.List;
 
-@XmlRootElement
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlRootElement(name = "bacteriaList")
 public class BacteriaList {
     @XmlElement(name = "bacteria", type = Bacteria.class)
     private List<Bacteria> bacteriaList;
