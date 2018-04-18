@@ -53,6 +53,8 @@ public class LoginFrameController {
                 new MainFrameController(cm);
                 loginFrame.setVisible(false);
                 loginFrame.dispose();
+            }else {
+                LOG.warn("Database file has not been selected");
             }
         });
     }
