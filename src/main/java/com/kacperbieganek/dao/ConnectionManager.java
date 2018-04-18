@@ -30,6 +30,7 @@ public class ConnectionManager {
         if (connection == null) {
             try {
                 connection = DriverManager.getConnection(DRIVER + path);
+                connection.setAutoCommit(false);
                 LOG.info("Connection established to {}", path);
             } catch (SQLException e) {
                 LOG.error("", e);
